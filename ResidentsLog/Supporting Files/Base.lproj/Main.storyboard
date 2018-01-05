@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c0n-nq-j5Z">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Resident Log-->
+        <scene sceneID="DKT-VJ-QuL">
+            <objects>
+                <tableViewController id="6NT-vL-v5c" customClass="RootViewController" customModule="ResidentsLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Gji-mU-UYu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="ALR-vi-sO0" customClass="MRNTableViewCell" customModule="ResidentsLog" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ALR-vi-sO0" id="odP-te-byD">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KI7-8b-ujc">
+                                            <rect key="frame" x="24" y="10" width="49" height="23.5"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Idx-fk-B12">
+                                            <rect key="frame" x="329" y="7" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="C8W-fp-LgS"/>
+                                                <constraint firstAttribute="width" constant="30" id="vAc-4Z-sLg"/>
+                                            </constraints>
+                                            <state key="normal" backgroundImage="unchecked-icon"/>
+                                            <connections>
+                                                <action selector="buttonTapped:" destination="ALR-vi-sO0" eventType="touchUpInside" id="zyz-k3-VSO"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KI7-8b-ujc" firstAttribute="centerY" secondItem="odP-te-byD" secondAttribute="centerY" id="3pe-SI-37T"/>
+                                        <constraint firstItem="Idx-fk-B12" firstAttribute="centerY" secondItem="odP-te-byD" secondAttribute="centerY" id="8Fe-XM-F1F"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KI7-8b-ujc" secondAttribute="trailingMargin" constant="8" id="AV2-sp-Pra"/>
+                                        <constraint firstItem="KI7-8b-ujc" firstAttribute="leading" secondItem="odP-te-byD" secondAttribute="leadingMargin" constant="8" id="vBu-RT-o1M"/>
+                                        <constraint firstAttribute="trailing" secondItem="Idx-fk-B12" secondAttribute="trailing" constant="16" id="ykY-qx-Xqy"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="checkedButton" destination="Idx-fk-B12" id="xFJ-v2-FAJ"/>
+                                    <outlet property="mrnLabel" destination="KI7-8b-ujc" id="Vc7-hr-FMK"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6NT-vL-v5c" id="ZfO-ps-OrG"/>
+                            <outlet property="delegate" destination="6NT-vL-v5c" id="YLq-o9-r6s"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Resident Log" id="4Ov-G5-sGI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fHr-Hk-bHB">
+                            <connections>
+                                <action selector="addTapped:" destination="6NT-vL-v5c" id="GxK-9u-VAs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="fYU-Ys-90g" kind="show" identifier="ShowPatient" id="tdS-g0-9Ja"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FWP-c9-xx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="-287.40629685157421"/>
+        </scene>
+        <!--Resident View Controller-->
+        <scene sceneID="Qxy-JE-1Yn">
+            <objects>
+                <viewController id="fYU-Ys-90g" customClass="ResidentViewController" customModule="ResidentsLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BmB-3e-sNS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jEp-xx-hvT">
+                                <rect key="frame" x="30" y="84" width="337" height="310"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MRN" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f9d-3p-qSS">
+                                        <rect key="frame" x="0.0" y="0.0" width="337" height="40"/>
+                                        <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="A4U-Sm-Ad3"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rPI-IW-Q7M">
+                                        <rect key="frame" x="0.0" y="50" width="337" height="40"/>
+                                        <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="1Kx-SR-nAH"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Doctor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e8y-TR-8iQ">
+                                        <rect key="frame" x="0.0" y="100" width="337" height="40"/>
+                                        <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="YV3-ca-uaJ"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Notes" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yHa-v8-IZY">
+                                        <rect key="frame" x="0.0" y="150" width="337" height="40"/>
+                                        <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="4bq-c6-WKR"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtr-TU-xvh">
+                                        <rect key="frame" x="0.0" y="200" width="337" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="cAK-sz-Y73"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="savePatient:" destination="fYU-Ys-90g" eventType="touchUpInside" id="eRa-Fz-5l8"/>
+                                            <segue destination="fWR-PG-uX8" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="8Uf-Jo-R8V"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6q-fk-nH1">
+                                        <rect key="frame" x="0.0" y="260" width="337" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="yeq-sa-FKk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                        <state key="normal" title="Scan">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapped" destination="fYU-Ys-90g" eventType="touchUpInside" id="I3L-DS-kuq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jEp-xx-hvT" firstAttribute="leading" secondItem="Pw0-ty-vDl" secondAttribute="leading" constant="30" id="2K3-ME-1Hs"/>
+                            <constraint firstItem="Pw0-ty-vDl" firstAttribute="trailing" secondItem="jEp-xx-hvT" secondAttribute="trailing" constant="8" id="XMP-4A-09T"/>
+                            <constraint firstItem="jEp-xx-hvT" firstAttribute="top" secondItem="Pw0-ty-vDl" secondAttribute="top" constant="20" id="odI-gR-Hch"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pw0-ty-vDl"/>
+                    </view>
+                    <connections>
+                        <outlet property="dateTextField" destination="rPI-IW-Q7M" id="jCV-pW-MVi"/>
+                        <outlet property="doctorTextfield" destination="e8y-TR-8iQ" id="6X4-ut-pKu"/>
+                        <outlet property="mrnTextField" destination="f9d-3p-qSS" id="CkL-f8-ew2"/>
+                        <outlet property="notesTextField" destination="yHa-v8-IZY" id="VOo-ii-LzW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ku-bG-QIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="fWR-PG-uX8" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1149.5999999999999" y="-296.40179910044981"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0kz-am-fPJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c0n-nq-j5Z" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2EQ-D6-8FG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.0" blue="0.065431795061399178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6NT-vL-v5c" kind="relationship" relationship="rootViewController" id="8wL-Yj-vl8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="klt-TQ-ubn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-348" y="-287"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="unchecked-icon" width="125" height="135"/>
+    </resources>
+</document>
