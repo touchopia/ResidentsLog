@@ -101,7 +101,7 @@ class ResidentViewController: UIViewController, UITextFieldDelegate, PPScanningD
         
         let settings = PPSettings()
         
-        settings.licenseSettings.licenseKey = "JDEU2C77-NFBAQNOT-6VTWB7EO-RE7AWQBL-DVZWOKBU-IPTL6WGP-U6X5LT5G-ZHTQ5YCW"
+        settings.licenseSettings.licenseKey = "<ENTER YOUR KEY HERE"
         
         let ocrRecognizerSettings = PPBlinkOcrRecognizerSettings()
         
